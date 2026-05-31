@@ -1,0 +1,6 @@
+allowBuilds:
+  '@swc/core': false
+  lefthook: false
+  msw: false
+  sharp: false
+  unrs-resolver: false
