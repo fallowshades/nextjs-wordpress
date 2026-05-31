@@ -1,15 +1,17 @@
-import getAllPosts from '@/lib/queries/getAllPosts'
-import getPageBySlug from '@/lib/queries/getPageBySlug'
-import {Post} from '@/lib/types'
-import Image from 'next/image'
-import Link from 'next/link'
-import {notFound} from 'next/navigation'
+import getAllPosts from '@/lib/queries/getAllPosts';
+import getPageBySlug from '@/lib/queries/getPageBySlug';
+import { Post } from '@/lib/types';
+import Image from 'next/image';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 /**
  * The homepage route.
  *
  * @see https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#pages
  */
+import { Card } from '@/components/shared/Card';
+
 export default async function Home() {
   // Fetch homepage from WordPress.
   const homepage = await getPageBySlug('homepage')
@@ -45,6 +47,7 @@ export default async function Home() {
                   priority={index < 2}
                 />
               )}
+              <Card><Card/>
               <Link href={`/blog/${post.slug}`}>
                 <h2 dangerouslySetInnerHTML={{__html: post.title ?? ''}} />
               </Link>
