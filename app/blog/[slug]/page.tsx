@@ -7,7 +7,6 @@ import {Metadata} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import {notFound} from 'next/navigation'
-
 /**
  * Generate the static routes at build time.
  *
@@ -54,7 +53,6 @@ export async function generateMetadata({
     description: post.seo?.metaDesc ?? ''
   }
 }
-
 /**
  * The blog post route.
  *
@@ -71,7 +69,13 @@ export default async function Post({params}: Readonly<DynamicPageProps>) {
   if (!post) {
     notFound()
   }
-
+  {
+    /**
+     * header
+     * , content
+     * , footer
+     */
+  }
   return (
     <article>
       <header>

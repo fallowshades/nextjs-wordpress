@@ -25,10 +25,7 @@ export interface CommonButtonProps {
   id?: string // Add id as an optional prop since some buttons might need it
   // icon?: IconType
 }
-export interface LinkButtonProps
-  extends
-    CommonButtonProps,
-    Omit<LinkProps, keyof CommonButtonProps | 'disabled'> {
+export interface LinkButtonProps extends CommonButtonProps {
   as?: typeof Link
   to: string
   target?: string
@@ -87,3 +84,5 @@ export const Button = React.forwardRef<HTMLElement, ButtonProps>(
     }
   }
 )
+
+Button.displayName = 'Button'

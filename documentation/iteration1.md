@@ -2,9 +2,24 @@
 
 ##
 
-### frontend side
+[build]
+
+[pull]
+we have the template part in button.tsx with server components for [vDOM] updates. I don't know about about the [window] set up w user evts. the gracefull [fetch] from the model which is revalidated and [token-managed] in data layer (lib). we fetch like if it was batch based. we basically [filter] for slug in url instead that is connected to window. Looking at the RFC 9110 we can see that for a frontend engineer that consider [bandwidth]. it is govern by uh protocols. the content negotation is the challanging part.
+[push]
+ctrl by id [vdom] menuItem in head and post in page. the slug can filter.
+
+### frontend side webb component from repository or registry
+
+- what considerations about the content to be displayed
+- what type of components and how are they delivered on a blog
+- the interactive parts
 
 #### have card, container, and widget
+
+- hydration is not considered, only static and dynamic blocks. the content is conserned with linking with respect to host.
+
+- they render the post slug from the static page
 
 page.tsx
 
@@ -183,6 +198,8 @@ export const registry: Record<string, ComponentDefinition> = {
 ```
 
 #### challange
+
+- child template, card props , link mostly css
 
 Button.tsx
 
@@ -452,4 +469,23 @@ export const Button = React.forwardRef<HTMLElement, ButtonProps>(
     }
   }
 )
+```
+
+###
+
+```sh
+pnpm add use-debounce
+```
+
+###
+
+https://medium.com/@echernicky/setting-up-a-local-wp-wsl-ubuntu-environment-9e7bdc6e9dbd
+
+next.config.ts
+
+```ts
+import path from 'path'
+const nextConfig: NextConfig = {
+  reactCompiler: true,
+  outputFileTracingRoot: path.join(__dirname),
 ```

@@ -4,7 +4,7 @@ import {Button} from '@/components/shared/Button'
 // import { RadioGroup, Radio } from "~/components/radio-group"
 // import { Select, SelectItem } from "~/components/select"
 import {Breadcrumb, Breadcrumbs} from '@/app/components/breadcrumbs'
-import {Link} from '@/components/shared/link'
+import {Link} from '@/components/shared/Link'
 // import { TagGroup, Tag } from "~/components/tag-group"
 
 // import { Tree, TreeItem } from "~/components/tree"
